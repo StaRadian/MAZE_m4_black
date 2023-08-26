@@ -1,0 +1,23 @@
+%TF.GenerationSoftware,KiCad,Pcbnew,7.0.5*%
+%TF.CreationDate,2023-08-21T09:28:54+09:00*%
+%TF.ProjectId,STM32G4 MAZE,53544d33-3247-4342-904d-415a452e6b69,rev?*%
+%TF.SameCoordinates,Original*%
+%TF.FileFunction,Profile,NP*%
+%FSLAX46Y46*%
+G04 Gerber Fmt 4.6, Leading zero omitted, Abs format (unit mm)*
+G04 Created by KiCad (PCBNEW 7.0.5) date 2023-08-21 09:28:54*
+%MOMM*%
+%LPD*%
+G01*
+G04 APERTURE LIST*
+%TA.AperFunction,Profile*%
+%ADD10C,0.100000*%
+%TD*%
+G04 APERTURE END LIST*
+D10*
+X69520000Y-80950000D02*
+X130480000Y-80950000D01*
+X130480000Y-119050000D01*
+X69520000Y-119050000D01*
+X69520000Y-80950000D01*
+M02*
