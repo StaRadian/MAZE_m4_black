@@ -1,29 +1,5 @@
-set(WINDOWS_ST_CLT_PATH "C:/ST/STM32CubeCLT/STM32CubeCLT/GNU-tools-for-STM32/bin/")
-set(MAC_ST_CLT_PATH "/opt/ST/STM32CubeCLT/GNU-tools-for-STM32/bin/")
-if(EXISTS "${WINDOWS_ST_CLT_PATH}")
-    set(TOOLCHAIN_DIRECTORIES ${WINDOWS_ST_CLT_PATH})
-elseif(EXISTS "${MAC_ST_CLT_PATH}")
-    set(TOOLCHAIN_DIRECTORIES ${MAC_ST_CLT_PATH})
-else()
-    # Try to find an STM32CubeIDE installation to use for the toolchain.
-    file(GLOB TOOLCHAIN_DIRECTORIES
-        "C:/ST/STM32CubeIDE_*/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.*/tools/bin/"
-        "/opt/st/stm32cubeide_*/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.*/tools/bin/"
-        "/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.*/tools/bin/"
-    )
-endif()
-list(LENGTH TOOLCHAIN_DIRECTORIES TOOLCHAIN_DIRECTORIES_COUNT)
 
-if(TOOLCHAIN_DIRECTORIES_COUNT LESS 1)
-    message(WARNING "Could not find an STM32CubeIDE installation. Falling back to tools available on PATH.")
-else()
-    list(GET TOOLCHAIN_DIRECTORIES 0 TOOLCHAIN_DIRECTORY)
-    if (TOOLCHAIN_DIRECTORIES_COUNT GREATER 1)
-        message(STATUS "Found multiple STM32CubeIDE installations. Using \"${TOOLCHAIN_DIRECTORY}\".")
-    endif()
-endif()
-
-set(ST_CLT_PATH "C:/ST/STM32CubeCLT/STM32CubeCLT/GNU-tools-for-STM32/bin/")
+#set(TOOLCHAIN_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/tools/bin")   #toolchain path
 
 if(WIN32)
     set(TOOLCHAIN_SUFFIX ".exe")

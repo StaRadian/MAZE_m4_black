@@ -2,7 +2,7 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "launch (gdb)",
+      "name": "Launch",
       "type": "cppdbg",
       "request": "launch",
       "cwd": "${workspaceFolder}",
@@ -16,18 +16,12 @@
       "stopAtConnect": true,
       "postRemoteConnectCommands": [
         {
-          "text": "load build/debug/build/base.elf"
+          "text": "load build/debug/build/${workspaceFolderBasename}.elf"
         }
       ],
       "logging": {
         "engineLogging": true
       },
-      "preLaunchTask": "Build",
-      "svdPath": "${command:vscode-embedded.st.svd}/STM32G474.svd"
-    },
-    {
-      "name": "Flash",
-      "type": "cppdbg",
       "preLaunchTask": "Build",
       "svdPath": "${command:vscode-embedded.st.svd}/STM32G474.svd"
     }

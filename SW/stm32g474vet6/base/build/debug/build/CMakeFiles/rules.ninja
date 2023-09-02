@@ -25,7 +25,7 @@ rule CUSTOM_COMMAND
 rule ASM_COMPILER__base_Debug
   depfile = $DEP_FILE
   deps = gcc
-  command = C:\ST\STM32CubeIDE_1.13.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.0.202305231506\tools\bin\arm-none-eabi-gcc.exe -fdata-sections -ffunction-sections --specs=nano.specs -Wl,--gc-sections -x assembler-with-cpp $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  command = C:\Workspace\Project\MAZE_m4_black\SW\stm32g474vet6\base\tools\bin\arm-none-eabi-gcc.exe -fdata-sections -ffunction-sections --specs=nano.specs -Wl,--gc-sections -x assembler-with-cpp $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
   description = Building ASM object $out
 
 
@@ -35,7 +35,7 @@ rule ASM_COMPILER__base_Debug
 rule C_COMPILER__base_Debug
   depfile = $DEP_FILE
   deps = gcc
-  command = C:\ST\STM32CubeIDE_1.13.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.0.202305231506\tools\bin\arm-none-eabi-gcc.exe -fdata-sections -ffunction-sections --specs=nano.specs -Wl,--gc-sections $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  command = C:\Workspace\Project\MAZE_m4_black\SW\stm32g474vet6\base\tools\bin\arm-none-eabi-gcc.exe -fdata-sections -ffunction-sections --specs=nano.specs -Wl,--gc-sections $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
   description = Building C object $out
 
 
@@ -43,7 +43,7 @@ rule C_COMPILER__base_Debug
 # Rule for linking C executable.
 
 rule C_EXECUTABLE_LINKER__base_Debug
-  command = cmd.exe /C "$PRE_LINK && C:\ST\STM32CubeIDE_1.13.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.0.202305231506\tools\bin\arm-none-eabi-gcc.exe -fdata-sections -ffunction-sections --specs=nano.specs -Wl,--gc-sections $FLAGS $LINK_FLAGS $in -o $TARGET_FILE $LINK_PATH $LINK_LIBRARIES && $POST_BUILD"
+  command = cmd.exe /C "$PRE_LINK && C:\Workspace\Project\MAZE_m4_black\SW\stm32g474vet6\base\tools\bin\arm-none-eabi-gcc.exe -fdata-sections -ffunction-sections --specs=nano.specs -Wl,--gc-sections $FLAGS $LINK_FLAGS $in -o $TARGET_FILE $LINK_PATH $LINK_LIBRARIES && $POST_BUILD"
   description = Linking C executable $TARGET_FILE
   restat = $RESTAT
 
@@ -52,7 +52,7 @@ rule C_EXECUTABLE_LINKER__base_Debug
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = C:\Users\hsrhe\AppData\Roaming\Code\User\globalStorage\ms-vscode.vscode-embedded-tools\vcpkg\root\downloads\artifacts\vcpkg-ce-default\tools.kitware.cmake\3.20.1\bin\cmake.exe --regenerate-during-build -SC:\Workspace\Project\MAZE_m4_black\SW\base -BC:\Workspace\Project\MAZE_m4_black\SW\base\build\debug\build
+  command = C:\Users\hsrhe\AppData\Roaming\Code\User\globalStorage\ms-vscode.vscode-embedded-tools\vcpkg\root\downloads\artifacts\vcpkg-ce-default\tools.kitware.cmake\3.20.1\bin\cmake.exe --regenerate-during-build -SC:\Workspace\Project\MAZE_m4_black\SW\stm32g474vet6\base -BC:\Workspace\Project\MAZE_m4_black\SW\stm32g474vet6\base\build\debug\build
   description = Re-running CMake...
   generator = 1
 

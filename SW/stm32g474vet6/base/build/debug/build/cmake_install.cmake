@@ -1,8 +1,8 @@
-# Install script for directory: C:/Workspace/Project/MAZE_m4_black/SW/base
+# Install script for directory: C:/Workspace/Project/MAZE_m4_black/SW/stm32g474vet6/base
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Workspace/Project/MAZE_m4_black/SW/base/build/debug/install")
+  set(CMAKE_INSTALL_PREFIX "C:/Workspace/Project/MAZE_m4_black/SW/stm32g474vet6/base/build/debug/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -34,7 +34,7 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "C:/ST/STM32CubeIDE_1.13.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.0.202305231506/tools/bin/arm-none-eabi-objdump.exe")
+  set(CMAKE_OBJDUMP "C:/Workspace/Project/MAZE_m4_black/SW/stm32g474vet6/base/tools/bin/arm-none-eabi-objdump.exe")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Workspace/Project/MAZE_m4_black/SW/base/build/debug/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Workspace/Project/MAZE_m4_black/SW/stm32g474vet6/base/build/debug/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
