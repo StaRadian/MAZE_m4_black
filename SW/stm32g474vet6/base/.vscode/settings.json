@@ -2,6 +2,6 @@
   "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
   "cmake.configureOnOpen": true,
   "files.associations": {
-    "usart.h": "c"
+    "main.h": "c"
   }
 }
