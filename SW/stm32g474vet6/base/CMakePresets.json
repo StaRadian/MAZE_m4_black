@@ -5,12 +5,12 @@
       "name": "default",
       "hidden": true,
       "generator": "Ninja",
-      "binaryDir": "${sourceDir}/build/${presetName}/build",
+      "binaryDir": "${sourceDir}/build/${presetName}",
       "cacheVariables": {
         "CMAKE_INSTALL_PREFIX": "${sourceDir}/build/${presetName}/install",
         "CMAKE_TOOLCHAIN_FILE": {
           "type": "FILEPATH",
-          "value": "${sourceDir}/cmake/gcc-arm-none-eabi.cmake"
+          "value": "${sourceDir}/cmake/toolchain.cmake"
         }
       },
       "architecture": {
