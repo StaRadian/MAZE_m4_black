@@ -4,6 +4,7 @@
 ## 소개
 단국대 학술 동아리 MAZE의 개발보드 입니다.
 
+## 기능
 * UART Printf
 * Alphanumeric Display Serial Interface 라이브러리
 
