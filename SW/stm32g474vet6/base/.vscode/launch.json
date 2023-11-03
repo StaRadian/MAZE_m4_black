@@ -6,11 +6,11 @@
             "type": "cppdbg",
             "cwd": "${workspaceFolder}",
             "request": "launch",
-            "program": "build/base.elf",
+            "program": "${command:cmake.launchTargetPath}",
 
             "stopAtConnect": true,
             "postRemoteConnectCommands": [
-                {"text": "load build/base.elf"}
+                {"text": "load build/debug/base.elf"}
             ],
             "preLaunchTask": "build",
             "windows": {

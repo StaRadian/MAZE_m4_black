@@ -2,6 +2,8 @@
   "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
   "cmake.configureOnOpen": true,
   "files.associations": {
-    "main.h": "c"
+    "main.h": "c",
+    "gpio.h": "c",
+    "stdarg.h": "c"
   }
 }
