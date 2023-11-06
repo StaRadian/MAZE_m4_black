@@ -214,6 +214,12 @@ void hcms_data_load( char *buf )
 	HCMS_CLK_L;
 }
 
+//making later?
+void hcms_dot_load( char *buf )
+{
+
+}
+
 void hcms_init( void )
 {
 	HCMS_RESET_L;
