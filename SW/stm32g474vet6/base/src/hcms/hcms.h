@@ -2,6 +2,6 @@
 #define HCMS_H_
 
 void hcms_init( void );
-void hcmsprintf( char *pchar , ... );
+void hcmsprint( char *pchar , ... );
 
 #endif /* HCMS_H_ */
