@@ -12,8 +12,10 @@ target_compile_definitions(
 
 target_include_directories(
     ${TARGET_NAME} PRIVATE
+    "$<$<COMPILE_LANGUAGE:C>:${PROJECT_SOURCE_DIR}/src/test>"
     "$<$<COMPILE_LANGUAGE:C>:${PROJECT_SOURCE_DIR}/src/main>"
     "$<$<COMPILE_LANGUAGE:C>:${PROJECT_SOURCE_DIR}/src/hcms>"
+    "$<$<COMPILE_LANGUAGE:C>:${PROJECT_SOURCE_DIR}/src/uart_print>"
     "$<$<COMPILE_LANGUAGE:C>:${PROJECT_SOURCE_DIR}/include/Core\\Inc>"
     "$<$<COMPILE_LANGUAGE:C>:${PROJECT_SOURCE_DIR}/include/Drivers\\STM32G4xx_HAL_Driver\\Inc>"
     "$<$<COMPILE_LANGUAGE:C>:${PROJECT_SOURCE_DIR}/include/Drivers\\STM32G4xx_HAL_Driver\\Inc\\Legacy>"
@@ -67,7 +69,9 @@ target_link_options(
 target_sources(
     ${TARGET_NAME} PRIVATE
     "src\\main\\main.c"
+    "src\\test\\c.cpp"
     "src\\hcms\\hcms.c"
+    "src\\uart_print\\uart_print.c"
     "include\\startup_stm32g474xx.s"
     "include\\Core\\Src\\gpio.c"
     "include\\Core\\Src\\spi.c"
