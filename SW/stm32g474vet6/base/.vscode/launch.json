@@ -8,7 +8,7 @@
             "request": "launch",
             "program": "${command:cmake.launchTargetPath}",
 
-            "stopAtConnect": true,
+            "stopAtConnect": false,
             "postRemoteConnectCommands": [
                 {"text": "load build/debug/base.elf"}
             ],

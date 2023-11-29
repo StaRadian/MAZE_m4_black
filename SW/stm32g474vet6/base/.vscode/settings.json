@@ -4,6 +4,10 @@
   "files.associations": {
     "main.h": "c",
     "gpio.h": "c",
-    "stdarg.h": "c"
+    "stdarg.h": "c",
+    "typeinfo": "c",
+    "uart_print.h": "c",
+    "spi.h": "c",
+    "stm32g4xx_hal.h": "c"
   }
 }

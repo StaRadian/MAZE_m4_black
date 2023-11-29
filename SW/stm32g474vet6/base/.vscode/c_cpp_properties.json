@@ -3,8 +3,10 @@
         {
             "name": "blackm4set",
             "includePath": [
+                "${workspaceFolder}/src/test",
                 "${workspaceFolder}/src/main",
                 "${workspaceFolder}/src/hcms",
+                "${workspaceFolder}/src/uart_print",
                 "${workspaceFolder}/include/Core/Inc",
                 "${workspaceFolder}/include/Drivers/STM32G4xx_HAL_Driver/Inc",
                 "${workspaceFolder}/include/Drivers/STM32G4xx_HAL_Driver/Inc/Legacy",
