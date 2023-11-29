@@ -1,9 +1,6 @@
 # MAZE m4 Black
 언어 옵션: [English](README_KR.md) 
 
-## 소개
-단국대 학술 동아리 MAZE의 개발보드 입니다.
-
 ## 기능
 * UART Printf
 * Alphanumeric Display Serial Interface 라이브러리

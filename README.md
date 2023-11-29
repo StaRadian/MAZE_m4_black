@@ -1,7 +1,6 @@
 # MAZE m4 Black README
 Langange option: [한국어](README_KR.md)
 
-The Development Board of Dankook University's Club, MAZE.
 
 ## LICENSE
 ```
