@@ -12,7 +12,7 @@
             "postRemoteConnectCommands": [
                 {"text": "load build/debug/base.elf"}
             ],
-            "preLaunchTask": "build",
+            "preLaunchTask": "build project",
             "windows": {
                 "MIMode": "gdb",
                 "miDebuggerPath": "C:/ST/STM32CubeCLT/GNU-tools-for-STM32/bin/arm-none-eabi-gdb.exe",
