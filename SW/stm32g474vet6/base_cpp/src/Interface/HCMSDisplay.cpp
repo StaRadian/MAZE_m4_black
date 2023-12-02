@@ -102,7 +102,7 @@ void HCMSDisplay::CtrlRegSet(
     CtrlRegLoad(result);
 }
 
-void HCMSDisplay::Print( char *pchar , ... ) {
+void HCMSDisplay::Print( const char *pchar , ... ) {
     char buf[ 16 ] = { 0 , };
 	
     va_list va_ptr;
