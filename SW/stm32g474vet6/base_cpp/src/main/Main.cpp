@@ -4,7 +4,8 @@
 #include "spi.h"
 #include "usart.h"
 
-#include "interfaces/HCMSDisplay.h"
+#include "Interface/HCMSDisplay.h"
+#include "Interface/UartPrint.h"
 
 #include <iomanip>
 
@@ -60,9 +61,14 @@ int main(void)
     GPIOB ,GPIO_PIN_9
   );
 
+  UartPrint tx(&huart1);
+
   while (1)
   {
-    vfd.Print("hi");
+    vfd.Print("AASTSVFD");
+    
+    tx.Print("hi\n");
+
     HAL_Delay(100);
   }
 }

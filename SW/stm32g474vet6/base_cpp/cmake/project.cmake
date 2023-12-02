@@ -72,7 +72,8 @@ target_link_options(
 target_sources(
     ${TARGET_NAME} PRIVATE
     "src/main/Main.cpp"
-    "src/display/HCMSDisplay.cpp"
+    "src/Interface/HCMSDisplay.cpp"
+    "src/Interface/UartPrint.cpp"
     "include/startup_stm32g474xx.s"
     "include/Core/Src/gpio.c"
     "include/Core/Src/spi.c"
