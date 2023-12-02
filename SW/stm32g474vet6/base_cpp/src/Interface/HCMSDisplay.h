@@ -1,5 +1,5 @@
-#ifndef HCMS_H_
-#define HCMS_H_
+#ifndef HCMSDISPLAY_H_
+#define HCMSDISPLAY_H_
 
 #include "stm32g4xx_hal.h"
 
@@ -40,7 +40,7 @@ public:
         const uint8_t peak_current_percent = 73, 
         const bool sleep_mode = false );
     
-    void Print( char *pchar , ... );
+    void Print( const char *pchar , ... );
 
 private:
 
@@ -190,4 +190,4 @@ private:
 
 };
 
-#endif /* HCMS_H_ */
+#endif /* HCMSDISPLAY_H_ */
