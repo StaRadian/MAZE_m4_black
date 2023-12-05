@@ -6,12 +6,12 @@
 
 #include "usart.h"
 
-UartPrint::UartPrint(UART_HandleTypeDef *huart) : m_huart(huart) {
-  huart1.Init.BaudRate = 9600;
-  HAL_UART_Init(&huart1);
+UartPrint::UartPrint(UART_HandleTypeDef *huart, const uint32_t baudrate) : m_huart(huart) {
+    huart1.Init.BaudRate = baudrate;
+    HAL_UART_Init(&huart1);
 }
 
-void UartPrint::Print( char *pchar , ... ) {
+void UartPrint::Print( const char *pchar , ... ) {
     char buf[ 128 ] = { 0 , };
 	
     va_list va_ptr;
@@ -20,5 +20,5 @@ void UartPrint::Print( char *pchar , ... ) {
     vsprintf( buf , pchar , va_ptr );
     va_end( va_ptr );
 	
-    HAL_UART_Transmit(m_huart, (uint8_t *)buf, strlen(buf), 0xFFFF);
+    HAL_UART_Transmit_IT(m_huart, (uint8_t *)buf, strlen(buf));
 }
