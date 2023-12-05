@@ -53,6 +53,7 @@
     "new": "cpp",
     "numbers": "cpp",
     "sstream": "cpp",
-    "stdexcept": "cpp"
+    "stdexcept": "cpp",
+    "cstring": "cpp"
   }
 }
