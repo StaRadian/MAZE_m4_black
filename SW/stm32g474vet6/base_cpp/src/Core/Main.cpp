@@ -6,6 +6,7 @@
 
 #include "Interface/HCMSDisplay.h"
 #include "Interface/UartPrint.h"
+#include "Interface/SST25Flash.h"
 
 #include <iomanip>
 
@@ -44,23 +45,6 @@ void SystemClock_Config(void)
   }
 }
 
-uint8_t txdata_RDSR = 0x05;
-uint8_t rxdata_RDSR = 0x00;
-
-uint8_t txdata_4KbyteSectorErase[4] = {0x20, 0x00, 0x00, 0x00};
-
-uint8_t txdata_WREN = 0x06;
-
-uint8_t txdata_WRSR[2] = {0x01, 0x00};
-
-uint8_t txdata_ByteProgram[5] = {0x02, 0x00, 0x00, 0x00, 0x4d};
-
-uint8_t txdata_READ[4] = {0x03, 0x00, 0x00, 0x00};
-uint8_t rxdata_READ[5] = {0x00, 0x00, 0x00, 0x00, 0x00};
-
-uint8_t txdata_JEDEC = 0x9f;
-uint8_t rxdata_JEDEC[3] = {0x00, 0x00, 0x00};
-
 int main(void)
 {
   HAL_Init();
@@ -83,67 +67,10 @@ int main(void)
   vfd.Print("Hi bart");
   
   tx.Print("Welcome to the M4");
-
-  HAL_GPIO_WritePin(Flash_CE_GPIO_Port, Flash_CE_Pin, GPIO_PIN_RESET);
-  HAL_SPI_Transmit(&hspi3, &txdata_RDSR, 1, 0xffffff);
-  HAL_SPI_Receive(&hspi3, &rxdata_RDSR, 1, 0xffffff); 
-  HAL_GPIO_WritePin(Flash_CE_GPIO_Port, Flash_CE_Pin, GPIO_PIN_SET);
-  vfd.Print("%X", rxdata_RDSR); //12
-
-  txdata_WRSR[1] = rxdata_RDSR & 0b11110011;
-
-  HAL_GPIO_WritePin(Flash_CE_GPIO_Port, Flash_CE_Pin, GPIO_PIN_RESET);
-  HAL_SPI_Transmit(&hspi3, txdata_WRSR, 2, 0xffffff);
-  HAL_GPIO_WritePin(Flash_CE_GPIO_Port, Flash_CE_Pin, GPIO_PIN_SET);
-  vfd.Print("WRSR");
-
-  HAL_GPIO_WritePin(Flash_CE_GPIO_Port, Flash_CE_Pin, GPIO_PIN_RESET);
-  HAL_SPI_Transmit(&hspi3, &txdata_RDSR, 1, 0xffffff);
-  HAL_SPI_Receive(&hspi3, &rxdata_RDSR, 1, 0xffffff); 
-  HAL_GPIO_WritePin(Flash_CE_GPIO_Port, Flash_CE_Pin, GPIO_PIN_SET);
-  vfd.Print("%X", rxdata_RDSR); //14
-
-  HAL_GPIO_WritePin(Flash_WP_GPIO_Port, Flash_WP_Pin, GPIO_PIN_SET);  //WP START
-
-  HAL_GPIO_WritePin(Flash_CE_GPIO_Port, Flash_CE_Pin, GPIO_PIN_RESET);
-  HAL_SPI_Transmit(&hspi3, txdata_4KbyteSectorErase, 4, 0xffffff);
-  HAL_GPIO_WritePin(Flash_CE_GPIO_Port, Flash_CE_Pin, GPIO_PIN_SET);
-  vfd.Print("4KErase");
-
-  HAL_Delay(500);
-
-  HAL_GPIO_WritePin(Flash_CE_GPIO_Port, Flash_CE_Pin, GPIO_PIN_RESET);
-  HAL_SPI_Transmit(&hspi3, &txdata_WREN, 1, 0xffffff);
-  HAL_GPIO_WritePin(Flash_CE_GPIO_Port, Flash_CE_Pin, GPIO_PIN_SET);
-  vfd.Print("WREN");
-
-  HAL_GPIO_WritePin(Flash_CE_GPIO_Port, Flash_CE_Pin, GPIO_PIN_RESET);
-  HAL_SPI_Transmit(&hspi3, &txdata_RDSR, 1, 0xffffff);
-  HAL_SPI_Receive(&hspi3, &rxdata_RDSR, 1, 0xffffff); 
-  HAL_GPIO_WritePin(Flash_CE_GPIO_Port, Flash_CE_Pin, GPIO_PIN_SET);
-  vfd.Print("%X", rxdata_RDSR);
-
-  HAL_GPIO_WritePin(Flash_CE_GPIO_Port, Flash_CE_Pin, GPIO_PIN_RESET);
-  HAL_SPI_Transmit(&hspi3, txdata_ByteProgram, 5, 0xffffff);
-  HAL_GPIO_WritePin(Flash_CE_GPIO_Port, Flash_CE_Pin, GPIO_PIN_SET);
-  vfd.Print("ByteProg");
-  
-  HAL_GPIO_WritePin(Flash_CE_GPIO_Port, Flash_CE_Pin, GPIO_PIN_RESET);
-  HAL_SPI_Transmit(&hspi3, txdata_READ, 4, 0xffffff);
-  HAL_SPI_Receive(&hspi3, rxdata_READ, 5, 0xffffff);
-  HAL_GPIO_WritePin(Flash_CE_GPIO_Port, Flash_CE_Pin, GPIO_PIN_SET);
-  vfd.Print("%X", rxdata_READ[0]);
-  
-  HAL_GPIO_WritePin(Flash_WP_GPIO_Port, Flash_WP_Pin, GPIO_PIN_RESET);  //WP END
-
-  HAL_GPIO_WritePin(Flash_CE_GPIO_Port, Flash_CE_Pin, GPIO_PIN_RESET);
-  HAL_SPI_Transmit(&hspi3, &txdata_JEDEC, 1, 0xffffff);
-  HAL_SPI_Receive(&hspi3, rxdata_JEDEC, 3, 0xffffff); 
-  HAL_GPIO_WritePin(Flash_CE_GPIO_Port, Flash_CE_Pin, GPIO_PIN_SET);
+  // SST25Flash rom(Flash_CE_GPIO_Port, Flash_CE_Pin);
 
   while (1)
   {
-
   }
 }
 
