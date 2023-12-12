@@ -72,8 +72,10 @@ target_link_options(
 target_sources(
     ${TARGET_NAME} PRIVATE
     "src/Core/Main.cpp"
+    "src/Core/IRQHandler.cpp"
     "src/Interface/HCMSDisplay.cpp"
     "src/Interface/UartPrint.cpp"
+    "src/Interface/SST25Flash.cpp"
     "include/startup_stm32g474xx.s"
     "include/Core/Src/gpio.c"
     "include/Core/Src/spi.c"

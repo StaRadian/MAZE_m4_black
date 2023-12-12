@@ -54,6 +54,7 @@
     "numbers": "cpp",
     "sstream": "cpp",
     "stdexcept": "cpp",
-    "cstring": "cpp"
+    "cstring": "cpp",
+    "queue": "cpp"
   }
 }

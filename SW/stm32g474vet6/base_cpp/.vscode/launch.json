@@ -2,7 +2,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "C++ Launch",
+            "name": "STM32 black launch",
             "type": "cppdbg",
             "cwd": "${workspaceFolder}",
             "request": "launch",

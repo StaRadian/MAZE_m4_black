@@ -67,8 +67,9 @@ int main(void)
   vfd.Print("Hi bart");
   
   tx.Print("Welcome to the M4");
-  // SST25Flash rom(Flash_CE_GPIO_Port, Flash_CE_Pin);
+  SST25Flash rom(Flash_CE_GPIO_Port, Flash_CE_Pin);
 
+  rom.getData(0x000000, 4);
   while (1)
   {
   }
