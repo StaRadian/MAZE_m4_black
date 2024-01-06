@@ -1,12 +1,13 @@
 #include "main.h"
 
 #include "gpio.h"
+#include "i2c.h"
 #include "spi.h"
 #include "usart.h"
 
 #include "Interface/HCMSDisplay.h"
 #include "Interface/UartPrint.h"
-#include "Interface/SST25Flash.h"
+// #include "Interface/SST25Flash.h"
 
 #include <iomanip>
 
@@ -51,6 +52,8 @@ int main(void)
   SystemClock_Config();
 
   MX_GPIO_Init();
+  MX_I2C2_Init();
+  MX_SPI2_Init();
   MX_SPI3_Init();
   MX_USART1_UART_Init();
 
@@ -67,11 +70,27 @@ int main(void)
   vfd.Print("Hi bart");
   
   tx.Print("Welcome to the M4");
-  SST25Flash rom(Flash_CE_GPIO_Port, Flash_CE_Pin);
+  // SST25Flash rom(Flash_CE_GPIO_Port, Flash_CE_Pin);
+  // rom.getData(0x000000, 4);
 
-  rom.getData(0x000000, 4);
+  uint8_t tx_data[2] = {0x80 | 0x75, 0x00};
+  uint8_t rx_data[2] = {};
+
+  // HAL_StatusTypeDef a = HAL_SPI_TransmitReceive(&hspi1, tx_data, rx_data, 1, 1000);
+  // HAL_StatusTypeDef a = HAL_SPI_TransmitReceive(&hspi1, tx_data, rx_data, 2, 0xFFFF);
+  // HAL_StatusTypeDef a = HAL_SPI_TransmitReceive(&hspi2, tx_data, rx_data, 2, 0xFFFF);
+  uint8_t buffer[4] = {};
+  uint8_t data[4] = {0x75,};
+
+  // HAL_I2C_Master_Transmit(&hi2c2, 0b01101001 << 1, data, 1, HAL_MAX_DELAY);
+  HAL_I2C_Mem_Read(&hi2c2, 0b01101001 << 1, 0x75, I2C_MEMADD_SIZE_8BIT, buffer, 1, HAL_MAX_DELAY);
+
   while (1)
   {
+    vfd.Print("End");
+    // HAL_Delay(1);
+    // HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_9);
+    // HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_8);
   }
 }
 

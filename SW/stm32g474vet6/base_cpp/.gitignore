@@ -1,5 +1,5 @@
-# .gitignore
+.gitignore
 build
-# include/*
-# !include/base.ioc
-# !include/STM32G474VETx_FLASH.ld
+include/*
+!include/base.ioc
+# !include/STM32G474VETx_FLASH.ldz
