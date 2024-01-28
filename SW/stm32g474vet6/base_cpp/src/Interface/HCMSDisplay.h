@@ -56,8 +56,7 @@ private:
     void CE_L() { m_CE_base->BRR = (uint32_t)m_CE_pin; }
     void RESET_L() { m_RESET_base->BRR = (uint32_t)m_RESET_pin; }
 
-    const uint8_t FontData7x5[ 0x80 ][ 5 ] =
-    {	
+    const uint8_t FontData7x5[ 0x80 ][ 5 ] = {	
         {0x00,0x00,0x00,0x00,0x00},		// 0   NUL
         {0x00,0x00,0x00,0x00,0x00},		// 1   SOH
         {0x00,0x00,0x00,0x00,0x00},		// 2   STX

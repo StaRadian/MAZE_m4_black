@@ -79,6 +79,7 @@ target_sources(
     
     "include/startup_stm32g474xx.s"
     "include/Core/Src/gpio.c"
+    "include/Core/Src/hrtim.c"
     "include/Core/Src/i2c.c"
     "include/Core/Src/spi.c"
     "include/Core/Src/stm32g4xx_hal_msp.c"
@@ -93,6 +94,7 @@ target_sources(
     "include/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash_ramfunc.c"
     "include/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash.c"
     "include/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.c"
+    "include/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_hrtim.c"
     "include/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_i2c_ex.c"
     "include/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_i2c.c"
     "include/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c"

@@ -55,6 +55,7 @@
     "sstream": "cpp",
     "stdexcept": "cpp",
     "cstring": "cpp",
-    "queue": "cpp"
+    "queue": "cpp",
+    "hrtim.h": "c"
   }
 }

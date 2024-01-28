@@ -13,6 +13,8 @@ else()
     set(TOOLCHAIN_PREFIX "")
 endif()
 
+set(TOOLCHAIN_DIRECTORY "C:/ST/STM32CubeCLT/GNU-tools-for-STM32/bin")
+
 set(TOOLCHAIN_PREFIX                "arm-none-eabi-")
 if(DEFINED TOOLCHAIN_DIRECTORY)
     set(TOOLCHAIN_PREFIX            "${TOOLCHAIN_DIRECTORY}/${TOOLCHAIN_PREFIX}")
